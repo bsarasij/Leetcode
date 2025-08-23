@@ -1,34 +1,34 @@
 class Solution {
 public:
     void trav_right(const int& x_min, const int& y_min, const int& y_max, vector<vector<int>>& matrix, vector<int>& spiral_mat){
-        if (y_min > y_max){
-            return;
-        }
+        // if (y_min > y_max){
+        //     return;
+        // }
         for (int j = y_min; j <= y_max; j++){
             spiral_mat.push_back(matrix[x_min][j]);
         }
     }
     void trav_down(const int& y_max, const int& x_min, const int& x_max, vector<vector<int>>& matrix, vector<int>& spiral_mat){
-        if (x_min > x_max){
-            return;
-        }
+        // if (x_min > x_max){
+        //     return;
+        // }
         for (int i = x_min; i <= x_max; i++){
             spiral_mat.push_back(matrix[i][y_max]);
         }
 
     }
     void trav_left(const int& x_max, const int& y_max, const int& y_min, vector<vector<int>>& matrix, vector<int>& spiral_mat){
-        if (y_min > y_max){
-            return;
-        }
+        // if (y_min > y_max){
+        //     return;
+        // }
         for (int j = y_max; j >= y_min; j--){
             spiral_mat.push_back(matrix[x_max][j]);
         }
     }
     void trav_up(const int& y_min, const int& x_max, const int& x_min, vector<vector<int>>& matrix, vector<int>& spiral_mat){
-        if (x_min > x_max){
-            return;
-        }
+        // if (x_min > x_max){
+        //     return;
+        // }
         for (int i = x_max; i >= x_min; i--){
             spiral_mat.push_back(matrix[i][y_min]);
         }

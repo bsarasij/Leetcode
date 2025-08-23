@@ -43,20 +43,16 @@ public:
         int y_min = 0;
         int y_max = n-1;
         while (x_min <= x_max && y_min <= y_max){
-            if (x_min == x_max){
-                trav_right(x_min, y_min, y_max, matrix, spiral_mat);
-                break;
-            }
-            if (y_min == y_max){
-                trav_down (y_max, x_min, x_max, matrix,  spiral_mat);
-                break;
-            }
-            else {
-                trav_right(x_min, y_min, y_max, matrix, spiral_mat);
-                trav_down (y_max, x_min + 1, x_max, matrix,  spiral_mat);
+
+            trav_right(x_min, y_min, y_max, matrix, spiral_mat);
+            trav_down (y_max, x_min + 1, x_max, matrix,  spiral_mat);
+            if (x_min < x_max){
                 trav_left (x_max, y_max-1, y_min, matrix, spiral_mat);
+            }
+            if (y_min < y_max){
                 trav_up (y_min, x_max-1, x_min+1, matrix, spiral_mat);
-            }    
+            }
+            
             x_min += 1;
             x_max -= 1;
             y_min += 1;

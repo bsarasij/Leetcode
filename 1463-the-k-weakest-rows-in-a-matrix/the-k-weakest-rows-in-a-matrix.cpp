@@ -1,6 +1,8 @@
 class Solution {
 public:
-    vector<int> kWeakestRows(vector<vector<int>>& mat, int k) {
+    vector<int> kWeakestRows(
+        vector<vector<int>>& mat, int k
+        ) {
         std::unordered_map<int, int> map;
         std::priority_queue<pair<int,int>> heap;
         for (int row = 0; row < mat.size(); row++){
@@ -13,6 +15,7 @@ public:
             }
         };
         vector<int> weakRows;
+
         while(!heap.empty()){
             weakRows.push_back(heap.top().second);
             heap.pop();

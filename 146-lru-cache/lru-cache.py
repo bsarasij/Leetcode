@@ -41,7 +41,7 @@ class LRUCache:
             
     def deleteNode(self, node: Node) -> None:
         pred, succ = node.prev, node.next
-        if pred is None or succ is Node:
+        if pred is None or succ is None:
             return
         pred.next = succ
         succ.prev = pred

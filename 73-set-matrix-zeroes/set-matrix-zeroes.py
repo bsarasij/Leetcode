@@ -5,18 +5,18 @@ class Solution:
         """
         m = len(matrix)
         n = len(matrix[0])
-        rowSet, colSet = set(), set()
+        rowArr, colArr = [False for i in range(m)], [False for j in range(n)]
 
 
         for i in range(m):
             for j in range(n):
                 if matrix[i][j] == 0:
-                    rowSet.add(i)
-                    colSet.add(j)
+                    rowArr[i] = True
+                    colArr[j] = True
         
         for i in range(m):
             for j in range(n):
-                if i in rowSet or j in colSet:
+                if rowArr[i] or colArr[j]:
                     matrix[i][j] = 0
         
                     

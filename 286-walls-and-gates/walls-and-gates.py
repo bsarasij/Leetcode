@@ -10,7 +10,6 @@ class Solution:
         queue = deque()
         m, n = len(rooms), len(rooms[0])
         visited = [[0 for j in range(n)] for i in range(m)]
-        dist = [[0 for j in range(n)] for i in range(m)]
         for i in range(m):
             for j in range(n):
                 if rooms[i][j] == 0:
@@ -27,5 +26,5 @@ class Solution:
 
                 if self.valid(n_i, n_j, m, n, rooms) and (not visited[n_i][n_j]):
                     visited[n_i][n_j] = 1
-                    rooms[n_i][n_j] = rooms[curr_i][curr_j] + abs(di)+ abs(dj)
+                    rooms[n_i][n_j] = rooms[curr_i][curr_j] + 1
                     queue.append([n_i, n_j])
